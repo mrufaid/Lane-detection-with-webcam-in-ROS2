@@ -61,7 +61,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contributing
 
 Contributions are welcome! Please feel free to open a pull request or create an issue for any improvements or suggestions. 
-
-```
-
-Replace `your_username`, `your_package_name`, and adjust any other details as necessary. This template provides sections for description, features, installation instructions, usage, license, acknowledgments, and contributing guidelines. Feel free to customize it further to suit your project's specific needs!
