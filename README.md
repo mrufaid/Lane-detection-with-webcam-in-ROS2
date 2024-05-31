@@ -1,63 +1,112 @@
 
-
-# ROS 2 Lane Detection from Webcam
-
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## Description
+# Lane Detection from Webcam using ROS2, and OpenCV
 
-This project demonstrates real-time lane detection using ROS 2 and OpenCV, with support for external webcams. It detects and overlays lane markings on live video streams from webcams, making it suitable for applications such as autonomous driving and robotics projects.
+This project integrates ROS2 (Robot Operating System 2), and OpenCV to develop a real-time lane detection system using a webcam. The system is designed to detect and track lanes, making it useful for autonomous driving and robotics applications.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Setting up the Environment](#setting-up-the-environment)
+  - [Installing Dependencies](#installing-dependencies)
+- [Usage](#usage)
+  - [Running the Lane Detection Node](#running-the-lane-detection-node)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+## Introduction
+
+This project combines the power of ROS2 for robotics middleware, Ultralytics for advanced machine learning models, and OpenCV for computer vision tasks to create a robust lane detection system. The system captures video from a webcam and processes it to detect and highlight lanes in real-time.
 
 ## Features
 
-- Real-time lane detection
-- Support for external webcams
-- Adjustable parameters for lane detection algorithm
-- Easy integration with ROS2 systems
+- **Real-time Lane Detection**: Utilizes state-of-the-art machine learning models and computer vision techniques.
+- **ROS2 Integration**: Seamlessly integrates with ROS2, enabling easy integration with other ROS2-based systems.
+- **OpenCV Support**: Uses OpenCV for image processing and visualization.
+- **Customizable**: Allows customization of detection models and parameters.
 
 ## Installation
 
-1. Clone this repository in the src folder of the ros2 workspace:
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/your_username/ros2-lane-detection.git
-   ```
+Ensure you have the following installed on your system:
+
+- ROS2 (Foxy, Galactic, or Humble recommended)
+- Python 3.8+
+- OpenCV
 
 
-2. Build the ROS 2 package:
+### Setting up the Environment
 
-   ```bash
-   colcon build
-   ```
+1. **Install ROS2**: Follow the official ROS2 installation guide [here](https://docs.ros.org/en/foxy/Installation.html).
+
+2. **Create a ROS2 Workspace**:
+    ```bash
+    mkdir -p ~/ros2_ws/src
+    cd ~/ros2_ws/
+    colcon build
+    source install/setup.bash
+    ```
+
+### Installing Dependencies
+
+3. **Clone the Repository**:
+    ```bash
+    cd ~/ros2_ws/src
+    git clone https://github.com/mrufaid/Lane-detection-with-webcam-in-ROS2.git
+    ```
+
+4. **Install Python Dependencies**:
+    ```bash
+    cd ~/ros2_ws/src/Lane-detection-with-webcam-in-ROS2
+    pip install -r requirements.txt
+    ```
+
+5. **Build the Workspace**:
+    ```bash
+    cd ~/ros2_ws
+    colcon build
+    source install/setup.bash
+    ```
 
 ## Usage
 
-1. Source setup.bash file:
+### Running the Lane Detection Node
 
-   ```bash
-   source /install/setup.bash
-   ```
+1. **Run ROS2 Nodes**:
+    ```bash
+    ros2 run lane_detection cam_pub.py
+    ros2 run lane_detection cam_sub.py
+    ```
 
-2. Run the ROS 2 node:
+2. **Viewing Lane Detection Results**:
+    A window will open accessing the webcam and displaying detected lane lines.
 
-   ```bash
-   ros2 run your_package_name cam_pub
-   ```
-   ```bash
-   ros2 run your_package_name cam_sub
-   ```
-   
-
-## Adjust the parameters in the subscriber node to detect lanes properly if necessary.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- Special thanks to [OpenCV](https://opencv.org/) and [ROS 2](https://index.ros.org/doc/ros2/) communities for their contributions to open-source software.
+### Configuring the System
 
 ## Contributing
 
-Contributions are welcome! Please feel free to open a pull request or create an issue for any improvements or suggestions. 
+Contributions are welcomed to this project. To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-xyz`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add feature xyz'`).
+5. Push to the branch (`git push origin feature-xyz`).
+6. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [ROS2](https://docs.ros.org/en/foxy/index.html) - Robotics middleware framework.
+- [OpenCV](https://opencv.org/) - Open-source computer vision library.
+
+---
